@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Прогноз Погоды</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1 class = 'high'>Тут вы должны ввести свой город</h1>
+    </div>
+  </header>
+  <main>
+    {% block content %}
+    <form action="{{ url_for('submit_form') }}" method="post" class="form">
+        <div class="user">
+          <ul class="user-info">
+              <li class="user-info__item">
+  
+                  <label for="name">Город</label>
+                  <input type="text" name="name" id="name" placeholder="Введите ваш Город" required>
+              </li>
+          </ul>
+        </div>
+      <button class="button" type="submit">Готово!</button>
+      </form>
+    {% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
